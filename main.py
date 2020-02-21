@@ -818,6 +818,7 @@ class GameofHackerapp:
 
     def game_box_close(self):
         self.gb = 0
+        self._anim.destroy()
         self.box0.destroy()
         self.opened_box0.destroy()
         self.box1.destroy()

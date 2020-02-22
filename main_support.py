@@ -477,6 +477,25 @@ def create_game_event():
         level15.list_create()
         w.next.destroy()
 
+def sound_win():
+    file = "res/win.ogg"
+    w._sound.load(file)
+    w._sound.play()
+    
+def sound_winner():
+    file = "res/winner.ogg"
+    w._sound.load(file)
+    w._sound.play()
+    
+def sound_bust():
+    file = "res/bust.ogg"
+    w._sound.load(file)
+    w._sound.play()
+    
+def sound_busted():
+    file = "res/busted.ogg"
+    w._sound.load(file)
+    w._sound.play()
 
 def start_game():
     select_game()

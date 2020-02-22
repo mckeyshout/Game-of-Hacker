@@ -20,6 +20,10 @@ import level15
 from PIL import Image, ImageTk
 from itertools import count
 from tkinter import messagebox
+#from pydub import AudioSegment
+#from pydub.playback import play
+#import pyglet
+import pygame
 
 
 try:
@@ -567,6 +571,21 @@ class GameofHackerapp:
     def game_box_create(self, app=None):
         self._anim = ImageLabel(app)
         self._anim.load("img/hacking/hacking.gif")
+        pygame.mixer.init()
+        self._sound = pygame.mixer.music
+        #self._soundbust0 = pygame.mixer.music.load("res/busted0.ogg")
+        #self._soundbust1 = pygame.mixer.music.load("res/busted1.ogg")
+        #self._soundwin0 = pygame.mixer.music.load("res/win0.ogg")
+        #self._soundwin1 = pygame.mixer.music.load("res/win1.ogg").play()
+        #pygame.mixer.music.play()
+        #self._sbust0 = pyglet.resource.media("res/busted0.ogg", streaming=True)
+        #self._sbust1 = AudioSegment.from_file("res/busted1.ogg", format="ogg")
+        #play(self._sbust1)
+        #self.player = pyglet.media.Player()
+        #self._swin0 = pyglet.media.load("res/busted.wav")
+        #self._swin0.play()
+        #pyglet.app.run()
+        #self._swin1 = AudioSegment.from_file("res/win1.ogg", format="ogg")
         # BOX - 0
         def box_press0(event):
             self.box0.place_forget()

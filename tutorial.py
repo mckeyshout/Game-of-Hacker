@@ -1,5 +1,6 @@
 import random
 from tkinter import messagebox
+import main_support as ms
 
 try:
     from Tkinter import *
@@ -49,12 +50,16 @@ def get_random():
     a = random.choice(list)
     if a > 0 and a < 5:
         first_four = True
+        ms.sound_win()
     if a > 4 and a < 9:
         next_four = True
+        ms.sound_win()
     if a > 8 and a < 13:
         next2_four = True
+        ms.sound_win()
     if a > 12 and a < 17:
         last_four = True
+        ms.sound_win()
     if a == 0:
         busted = True
     list.remove(a)
@@ -91,6 +96,7 @@ def game_end_cont():
     global b0, b1, b2, b3, b10, b11, b12, b13, b20, b21, b22, b23, b30, b31, b32, b33
     if list == []:
         w.lvl1.configure(state="normal")
+        ms.sound_winner()
         messagebox.showinfo(title="TUTORIAL COMPLETED", message="Go back menu and choose LAMER 1 on Level TAB.")
 
 

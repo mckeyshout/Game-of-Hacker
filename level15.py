@@ -1,5 +1,6 @@
 import random
 from tkinter import messagebox
+import main_support as ms
 
 try:
     from Tkinter import *
@@ -51,8 +52,10 @@ def get_random():
     a = random.choice(list)
     if a == 16:
         last_four = True
+        ms.sound_win()
     else:
         busted = True
+        ms.sound_bust()
     list.remove(a)
     print(a)
     print(list)
@@ -175,6 +178,7 @@ def game_end_cont():
         b31_cc()
         b32_cc()
         b33_cc()
+        ms.sound_winner()
         messagebox.showinfo(title="CONGRATULATIONS", message="YOU ARE MASTER ON HACK. YOU HACKED THE WHOLE WORLD!")
 
 
@@ -449,6 +453,7 @@ def game_busted_cont():
     w.left0.place(x=56, y=56)
     w.right0.configure(image=w._busted0_right)
     w.right0.place(x=954, y=56)
+    ms.sound_busted()
     # w.left1.destroy()
     # w.right1.destroy()
     # w.left2.destroy()
